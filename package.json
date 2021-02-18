@@ -7,7 +7,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start:product": "node dist/server.js",
+    "start:prod": "node dist/server.js",
     "start:dev": "node src/index.js",
     "dev": "nodemon src/index.js",
     "build": "webpack --config webpack.config.js"
