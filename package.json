@@ -1,0 +1,9 @@
+{
+  "name": "webpack-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/bachtuyetx7chulun/Webpack.git",
+  "author": "TRUONG TRUNG HIEU <1721050670@student.humg.edu.vn>",
+  "license": "MIT",
+  "private": true
+}
