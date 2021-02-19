@@ -10,4 +10,3 @@ const getInformation = (obj) => {
 };
 
 getInformation(obj);
-console.log(process.argv[2]);
