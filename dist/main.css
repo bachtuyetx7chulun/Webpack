@@ -1,0 +1,19 @@
+.main {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.main p {
+    color: red;
+    text-transform: uppercase;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+}
+
+.main p:last-child {
+    color: rgb(69, 131, 238);
+}
+
+img {
+    max-width: 500px;
+}

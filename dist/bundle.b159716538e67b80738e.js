@@ -1,0 +1,1 @@
+(()=>{"use strict";var t=document.getElementById("time");setInterval((function(){t.innerHTML=e()}),1e3);var e=function(){return(new Date).toISOString()}})();

@@ -1,14 +1,17 @@
 const path = require('path');
 const miniFyPlugin = require('babel-minify-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: {
-    main: './src/index.js',
+    main: './public/js/index.js',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'server.js',
+    filename: 'bundle.[hash].js',
   },
   target: 'node',
   module: {
@@ -22,6 +25,10 @@ module.exports = {
           plugins: ['@babel/plugin-transform-runtime'],
         },
       },
+      {
+        test: /\.css$/i,
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+      },
     ],
   },
   plugins: [
@@ -31,5 +38,16 @@ module.exports = {
         comments: false,
       }
     ),
+
+    new HtmlWebpackPlugin({
+      title: 'main',
+      template: './public/index.html',
+    }),
+
+    new CleanWebpackPlugin(),
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+      chunkFilename: '[id].css',
+    }),
   ],
 };
